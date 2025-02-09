@@ -16,6 +16,10 @@ app.use(bodyParser.json());
 app.use('/api/users', userRoutes);
 app.use('/api/hospitals', hospitalRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the API. Use /api/users or /api/hospitals for more.');
+});
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
